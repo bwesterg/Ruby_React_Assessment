@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import SkiContainer from './components/SkiContainer';
-const skisUrl = "http://localhost:3000/skis"
+import SkiContainer from "./components/SkiContainer";
+import SkiForm from "./components/SkiForm";
+const skisUrl = "http://localhost:3000/skis";
 
 class App extends Component {
   
@@ -19,10 +20,24 @@ class App extends Component {
       .then(skis => this.setState({skis}))
   }
 
+  addSki = (newSki) => {
+    this.setState({
+      skis: [...this.state.skis, newSki]
+    })
+    fetch(skisUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newSki)
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Ski Collection App</h1>
+        <SkiForm addSki={this.addSki}/>
         <SkiContainer skis={this.state.skis} />
       </div>
     );
