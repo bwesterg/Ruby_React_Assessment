@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Ski.destroy_all
+
+Ski.create([
+    {
+        brand: "Solomon",
+        model: "X-Scream",
+        description: "Popular older model",
+        usage: "Alpine"
+    },
+    {
+        brand: "Volkls",
+        model: "Karma",
+        description: "Stout mid-wide",
+        usage: "Alpine"
+    },
+    {
+        brand: "Fischer",
+        model: "Lunar",
+        description: "Pure bump skis",
+        usage: "Alpine"
+    }
+])
