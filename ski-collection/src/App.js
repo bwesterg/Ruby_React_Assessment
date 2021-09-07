@@ -33,12 +33,20 @@ class App extends Component {
     })
   }
 
+  deleteSki = (id) => {
+    let filtered = this.state.skis.filter(ski => ski.id !== id)
+    this.setState({
+      skis: filtered
+    })
+    fetch(skisUrl + "/" + id, { method: "DELETE" })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Ski Collection App</h1>
         <SkiForm addSki={this.addSki}/>
-        <SkiContainer skis={this.state.skis} />
+        <SkiContainer deleteSki={this.deleteSki} skis={this.state.skis} />
       </div>
     );
   }

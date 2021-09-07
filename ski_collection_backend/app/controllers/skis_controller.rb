@@ -15,4 +15,13 @@ class SkisController < ApplicationController
 
         render json: @ski, status: :created
     end
+
+    def destroy 
+        @ski = Ski.find(params[:id])
+
+        @ski.destroy
+        
+        render status: :no_content
+
+    end
 end
