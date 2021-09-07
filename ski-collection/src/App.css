@@ -1,12 +1,33 @@
+body {
+  background-color: rgb(255, 252, 223);
+}
+
+.ski-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 5px -8px grey;
+}
+
 .ski-list {
   display: flex;
   flex-flow: row wrap;
   list-style-type: none;
   justify-content: space-between;
   width: 90%;
+  margin: 0 auto;
+  padding-inline-start: 0;
 }
 
 .ski-item {
+  background-color: white;
   width: 200px;
   height: 200px;
   box-shadow: 0 20px 10px -8px grey;
