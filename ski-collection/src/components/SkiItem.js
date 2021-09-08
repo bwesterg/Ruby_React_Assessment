@@ -13,8 +13,8 @@ export default function SkiItem({id, brand, model, description, usage, updateSki
             <h3>{model}</h3>
             <h4>{description}</h4>
             <h4>{usage}</h4>
-            <button onClick={handleClick} className="delete-button">Delete</button>
-            <button onClick={handleToggle} className="edit-button">Update</button>
+            <button onClick={handleClick} className="delete-button" >Delete</button>
+            <button onClick={handleToggle} className="edit-button" >Update</button>
 
         </li>
     )

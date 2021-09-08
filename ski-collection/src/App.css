@@ -2,11 +2,15 @@ body {
   background-color: rgb(255, 252, 223);
 }
 
+.App{
+  text-align: center;
+}
+
 .ski-form {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 200px;
+  height: 250px;
   margin: auto;
   justify-content: space-evenly;
   background-color: white;
@@ -28,12 +32,13 @@ body {
 
 .ski-item { 
   background-color: white;
-  width: 200px;
+  width: 220px;
   box-shadow: 0 20px 10px -8px grey;
   text-align: center;
   border-radius: 6px;
-  padding: 10px;
+  padding: 20px;
   height: max-content;
+  margin-top: 10px;
 }
 
 .edit-button {
@@ -50,4 +55,37 @@ body {
   background-color: rgb(255, 164, 164);
   color: white;
   font-weight: bold;
+}
+
+input[type="submit"]{
+  padding: 10px;
+  box-shadow: 0 20px 20px -10px rgb(199, 199, 199); 
+  transition: .2s linear;
+}
+
+input[type="submit"]:hover{
+  color: white;
+  background-color: rgb(5, 106, 0);
+  border: none;
+  font-weight: bold;
+}
+
+.error-red {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 5px -8px grey;
 }
