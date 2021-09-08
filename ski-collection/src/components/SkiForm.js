@@ -12,6 +12,20 @@ export default class SkiForm extends Component{
 
     state = initialState
 
+    componentDidMount(){
+        const {ski} = this.props
+        if(this.props.ski){
+            const {id, brand, model, description, usage} = ski
+            this.setState({
+                id,
+                brand,
+                model,
+                description,
+                usage
+            })
+        }
+    }
+
     handleChange = (event) => {
         let {name, value} = event.target
 
@@ -22,7 +36,16 @@ export default class SkiForm extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addSki(this.state)
+        this.props.submitAction(this.state)
+        if(this.props.handleToggle){
+            this.props.handleToggle()
+        }
+    }
+
+    showCloseButton = () => {
+        return this.props.ski
+            ? <button className="close-button" onClick={this.props.handleToggle}>Close edit form</button>
+            : null
     }
 
     render(){
@@ -30,7 +53,7 @@ export default class SkiForm extends Component{
 
         return (
             <form className="ski-form" onSubmit={this.handleSubmit}>
-                <h3>Add a new pair of skis</h3>
+                {this.props.ski ? <h3>Edit Ski</h3> : <h3>Add a new pair of skis</h3>}
                 <label>Brand</label>
                 <input type="text" name="brand" value={brand} onChange={this.handleChange}/>
                 <label>Model</label>
@@ -41,6 +64,7 @@ export default class SkiForm extends Component{
                 <input type="text" name="usage" value={usage} onChange={this.handleChange}/>
 
                 <input type="submit" className="submit-button" />
+                {this.showCloseButton()}
             </form>
         )
     }
