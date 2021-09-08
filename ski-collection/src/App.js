@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import SignUpForm from './components/SignUpForm';
 import SkiContainer from "./components/SkiContainer";
 import SkiForm from "./components/SkiForm";
 import { patchSki, postSki, deleteSki } from './helpers';
-const skisUrl = "http://localhost:3000/skis/";
+import SignUpForm from './components/SignUpForm';
+import {Route, Switch} from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute'
+import Home from './components/Home';
+const skisUrl = "http://localhost:3000/skis/"
 
 class App extends Component {
   
@@ -74,9 +77,18 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Ski Collection App</h1>
-        <SignUpForm signUp={this.signUp} alerts={this.state.alerts} />
-        <SkiForm submitAction={this.addSki}/>
-        <SkiContainer updateSki={this.updateSki} deleteSki={this.deleteSki} skis={this.state.skis} />
+        <Switch>
+          <PrivateRoute
+            exact 
+            path="/" 
+            component={Home}
+            submitAction={this.addSki}
+            updateSki={this.updateSki} 
+            deleteSki={this.deleteSki} 
+            skis={this.state.skis}
+            />
+          <Route exact path="/signup" render={(routerProps) => <SignUpForm signUp={this.signUp} alerts={this.state.alerts}/>} />
+        </Switch>
       </div>
     );
   }
