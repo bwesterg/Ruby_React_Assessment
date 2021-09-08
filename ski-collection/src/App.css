@@ -26,15 +26,28 @@ body {
   padding-inline-start: 0;
 }
 
-.ski-item {
+.ski-item { 
   background-color: white;
   width: 200px;
-  height: 200px;
   box-shadow: 0 20px 10px -8px grey;
   text-align: center;
   border-radius: 6px;
+  padding: 10px;
+  height: max-content;
+}
+
+.edit-button {
+  background-color: rgb(252, 252, 151);
+  color: rgb(56, 133, 233)
 }
 
 .delete-button {
   background-color: rgb(255, 164, 164);
+  color: white;
+}
+
+.close-button {
+  background-color: rgb(255, 164, 164);
+  color: white;
+  font-weight: bold;
 }

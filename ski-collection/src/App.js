@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import SkiContainer from "./components/SkiContainer";
 import SkiForm from "./components/SkiForm";
-const skisUrl = "http://localhost:3000/skis";
+import { patchSki, postSki, deleteSki } from './helpers';
+const skisUrl = "http://localhost:3000/skis/";
 
 class App extends Component {
   
@@ -24,13 +25,15 @@ class App extends Component {
     this.setState({
       skis: [...this.state.skis, newSki]
     })
-    fetch(skisUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newSki)
-    })
+    postSki(newSki)
+  }
+
+  updateSki = (updatedSki) => {
+    let skis = this.state.skis.map(ski => ski.id === updatedSki.id ? updatedSki : ski)
+
+    this.setState({ skis })
+
+    patchSki(updatedSki)    
   }
 
   deleteSki = (id) => {
@@ -38,15 +41,15 @@ class App extends Component {
     this.setState({
       skis: filtered
     })
-    fetch(skisUrl + "/" + id, { method: "DELETE" })
+    deleteSki(id)
   }
 
   render() {
     return (
       <div className="App">
         <h1>Ski Collection App</h1>
-        <SkiForm addSki={this.addSki}/>
-        <SkiContainer deleteSki={this.deleteSki} skis={this.state.skis} />
+        <SkiForm submitAction={this.addSki}/>
+        <SkiContainer updateSki={this.updateSki} deleteSki={this.deleteSki} skis={this.state.skis} />
       </div>
     );
   }
