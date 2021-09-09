@@ -7,7 +7,6 @@ const initialState = {
     usage: ""
 }
 
-
 export default class SkiForm extends Component{
 
     state = initialState
@@ -34,11 +33,20 @@ export default class SkiForm extends Component{
         })
     }
 
+    // handleSubmit = (event) => {
+    //     event.preventDefault()
+    //     this.props.submitAction(this.state)
+    //     if(this.props.handleToggle){
+    //         this.props.handleToggle()
+    //     }
+    // }
+
     handleSubmit = (event) => {
+        let {submitAction, handleToggle} = this.props
         event.preventDefault()
-        this.props.submitAction(this.state)
-        if(this.props.handleToggle){
-            this.props.handleToggle()
+        submitAction(this.state)
+        if(handleToggle){
+            handleToggle()
         }
     }
 
@@ -50,7 +58,6 @@ export default class SkiForm extends Component{
 
     render(){
         const {brand, model, description, usage} = this.state
-
         return (
             <form className="ski-form" onSubmit={this.handleSubmit}>
                 {this.props.ski ? <h3>Edit Ski</h3> : <h3>Add a new pair of skis</h3>}

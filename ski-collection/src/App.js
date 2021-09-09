@@ -4,7 +4,7 @@ import SkiContainer from "./components/SkiContainer";
 import SkiForm from "./components/SkiForm";
 import { patchSki, postSki, deleteSki } from './helpers';
 import SignUpForm from './components/SignUpForm';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import Home from './components/Home';
 const skisUrl = "http://localhost:3000/skis/"
@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   signUp = (user) => {
-    fetch("http://localhost:3000/users", {
+    return fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
@@ -87,7 +87,10 @@ class App extends Component {
             deleteSki={this.deleteSki} 
             skis={this.state.skis}
             />
-          <Route exact path="/signup" render={(routerProps) => <SignUpForm signUp={this.signUp} alerts={this.state.alerts}/>} />
+          <Route exact path="/signup" render={(routerProps) => {
+            return <SignUpForm {...routerProps} signUp={this.signUp} alerts={this.state.alerts}/>} 
+          }/>
+          <Redirect to="/" />
         </Switch>
       </div>
     );
