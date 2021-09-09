@@ -50,6 +50,18 @@ class App extends Component {
     deleteSki(id)
   }
 
+  login = ({username, password}) => {
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, password })
+    })
+    .then(response => response.json())
+    .then(console.log)
+  }
+
   signUp = (user) => {
     return fetch("http://localhost:3000/users", {
       method: "POST",
@@ -88,7 +100,7 @@ class App extends Component {
             skis={this.state.skis}
             />
           <Route exact path="/signup" render={(routerProps) => {
-            return <SignUpForm {...routerProps} signUp={this.signUp} alerts={this.state.alerts}/>} 
+            return <SignUpForm {...routerProps} login={this.login} signUp={this.signUp} alerts={this.state.alerts}/>} 
           }/>
           <Redirect to="/" />
         </Switch>
