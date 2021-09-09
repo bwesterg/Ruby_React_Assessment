@@ -4,6 +4,8 @@ export default function SignUpForm(props) {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [login, setLogin] = useState("false")
+
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -12,7 +14,7 @@ export default function SignUpForm(props) {
             password
         }
         props.signUp(user)
-            // .then(() => props.history.push('/'))
+            .then(() => props.history.push('/'))
     }
 
     const handleChange = ({target}) => {
@@ -21,18 +23,27 @@ export default function SignUpForm(props) {
             : setPassword(target.value)
     }
 
+    const handleLoginForm = (event) => {
+        event.preventDefault()
+        setLogin(!login)
+    }
+
     const showAlerts = () => props.alerts.map(alert => <p className="error-red">{alert}</p>)
     
 
-    return (
+     return (
         <form className="signup-form" onSubmit={handleSubmit}> 
-            <h2>Sign Up</h2>
+            {login ? <h2>Log In</h2> : <h2>Sign Up</h2>}
             <label>Username</label>
             <input name="username" value={username} onChange={handleChange} />
             <label>Password</label>
             <input type="password" name="password" value={password} onChange={handleChange} />
             <input type="submit" />
             {props.alerts ? showAlerts() : null }
+            {login
+                ? <p>Don't Have a Profile? <button onClick={handleLoginForm} >Sign Up</button></p>
+                : <p>Already Have a Profile? <button onClick={handleLoginForm} >Log In</button></p>
+            }
         </form>
     )
 }
