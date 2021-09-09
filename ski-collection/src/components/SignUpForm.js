@@ -13,8 +13,11 @@ export default function SignUpForm(props) {
             username, 
             password
         }
-        props.signUp(user)
-            .then(() => props.history.push('/'))
+
+        login 
+            ? props.login(user)
+            : props.signUp(user)
+                .then(() => props.history.push('/'))
     }
 
     const handleChange = ({target}) => {
