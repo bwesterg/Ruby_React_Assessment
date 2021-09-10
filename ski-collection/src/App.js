@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   login = ({username, password}) => {
-    fetch("http://localhost:3000/login", {
+    return fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -59,7 +59,18 @@ class App extends Component {
       body: JSON.stringify({ username, password })
     })
     .then(response => response.json())
-    .then(console.log)
+    .then(response => {
+      if(response.errors){
+        this.setState({alerts: response.errors})
+      }
+      else {
+        localStorage.setItem('token', response.token)
+        this.setState({
+          user: response.user,
+          alerts: ["Successful Login!"]
+        })
+      }
+    })
   }
 
   signUp = (user) => {

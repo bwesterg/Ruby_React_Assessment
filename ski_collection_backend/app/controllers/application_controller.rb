@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
             @token = JWT.encode({user_id: @user.id}, "hallo")
             render json: {user: @user, token: @token}, status: :accepted
         else
-            render json: {message: 'Invalid username or password'}, status: :unauthorized
+            render json: {errors: ['Invalid username or password']}, status: :unauthorized
         end
     end
 end

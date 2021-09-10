@@ -16,6 +16,7 @@ export default function SignUpForm(props) {
 
         login 
             ? props.login(user)
+                .then(() => props.history.push('/'))
             : props.signUp(user)
                 .then(() => props.history.push('/'))
     }
