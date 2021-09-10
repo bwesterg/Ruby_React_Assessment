@@ -100,9 +100,16 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <nav>
-            <Link to="/signup">Logout</Link>
-          </nav>
+          {this.state.user.username 
+            ? (
+              <>
+                <p>Welcome, {this.state.user.username}</p> 
+                <nav>
+                  <Link to="/signup">Logout</Link>
+                </nav>
+              </>
+              ) 
+          : null}
         </header>
         <h1>Ski Collection App</h1>
         <Switch>
