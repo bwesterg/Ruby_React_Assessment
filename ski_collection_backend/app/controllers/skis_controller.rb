@@ -26,6 +26,6 @@ class SkisController < ApplicationController
         @ski = Ski.find(params[:id])
     end
     def ski_params
-        params.require(:ski).permit(:brand, :model, :description, :usage)
+        params.require(:ski).permit(:brand, :model, :description, :usage, :user_id)
     end
 end

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:create]
+
+    def profile
+        render json: {user: current_user, skis: current_user.skis}
+    end
 
     def create
         @user = User.new(user_params)
