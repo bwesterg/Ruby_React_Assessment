@@ -17,16 +17,28 @@ class App extends Component {
     alerts: []
   }
 
-  // componentDidMount(){
-  //   this.getSkis()
-  // }
-  
-  // no longer need this b/c we only want to show skis for individual users
-  // getSkis = () => {
-  //   fetch(skisUrl)
-  //     .then(response => response.json())
-  //     .then(skis => this.setState({skis}))
-  // }
+  componentDidMount(){
+    if(localStorage.token){
+      this.authorize_user()
+    }
+  }
+
+  authorize_user = () => {
+    fetch("http://localhost:3000/profile", {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${localStorage.token}`
+      }
+    })
+    // .then(console.log)
+    .then(response => response.json())
+    .then(response => {
+      this.setState({
+        user: response.user,
+        skis: response.skis
+      })
+    })
+  }
 
   addSki = (newSki) => {
     this.setState({
