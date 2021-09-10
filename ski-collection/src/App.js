@@ -17,15 +17,16 @@ class App extends Component {
     alerts: []
   }
 
-  componentDidMount(){
-    this.getSkis()
-  }
+  // componentDidMount(){
+  //   this.getSkis()
+  // }
   
-  getSkis = () => {
-    fetch(skisUrl)
-      .then(response => response.json())
-      .then(skis => this.setState({skis}))
-  }
+  // no longer need this b/c we only want to show skis for individual users
+  // getSkis = () => {
+  //   fetch(skisUrl)
+  //     .then(response => response.json())
+  //     .then(skis => this.setState({skis}))
+  // }
 
   addSki = (newSki) => {
     this.setState({
@@ -67,7 +68,8 @@ class App extends Component {
         localStorage.setItem('token', response.token)
         this.setState({
           user: response.user,
-          alerts: ["Successful Login!"]
+          alerts: ["Successful Login!"],
+          skis: response.skis
         })
       }
     })
@@ -90,7 +92,8 @@ class App extends Component {
         localStorage.setItem('token', response.token)
         this.setState({
           user: response.user,
-          alerts: ["User successfully added to database"]
+          alerts: ["User successfully added to database"],
+          skis: response.skis
         })
       }
     })
