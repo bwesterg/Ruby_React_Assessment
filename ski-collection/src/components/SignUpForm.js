@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function SignUpForm(props) {
 
@@ -6,6 +6,9 @@ export default function SignUpForm(props) {
     const [password, setPassword] = useState("")
     const [login, setLogin] = useState("false")
 
+    useEffect(() => {
+        localStorage.removeItem('token')
+    }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -17,6 +20,7 @@ export default function SignUpForm(props) {
         login 
             ? props.login(user)
                 .then(() => props.history.push('/'))
+                // .then(<p>Welcome, {user.name} </p>)
             : props.signUp(user)
                 .then(() => props.history.push('/'))
     }

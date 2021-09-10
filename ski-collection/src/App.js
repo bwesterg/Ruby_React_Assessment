@@ -4,7 +4,7 @@ import SkiContainer from "./components/SkiContainer";
 import SkiForm from "./components/SkiForm";
 import { patchSki, postSki, deleteSki } from './helpers';
 import SignUpForm from './components/SignUpForm';
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch, Redirect, Link} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import Home from './components/Home';
 const skisUrl = "http://localhost:3000/skis/"
@@ -99,6 +99,11 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        <header>
+          <nav>
+            <Link to="/signup">Logout</Link>
+          </nav>
+        </header>
         <h1>Ski Collection App</h1>
         <Switch>
           <PrivateRoute
