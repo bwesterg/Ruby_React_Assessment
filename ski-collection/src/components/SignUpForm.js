@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 export default function SignUpForm(props) {
-
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [login, setLogin] = useState("false")

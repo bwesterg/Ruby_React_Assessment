@@ -4,7 +4,9 @@ export function patchSki(ski){
   fetch(skisUrl + ski.id, {
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.token}`
+
       },
       body: JSON.stringify({ ski })
     })
