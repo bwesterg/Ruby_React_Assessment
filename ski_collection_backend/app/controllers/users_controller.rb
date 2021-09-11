@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
+
+    def index
+        @users = User.all
+        render({ json: @users, include: [:ski] })
+    end
+
+    def show
+        @user = User.find( params[:id] )
+        render( json: @user, include: [:ski])
+    end
+
     def profile
         render json: {user: current_user, skis: current_user.skis}
     end
