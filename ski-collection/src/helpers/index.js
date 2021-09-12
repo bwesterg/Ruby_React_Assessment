@@ -12,17 +12,21 @@ export function patchSki(ski){
     })
 }
 
-export function postSki(ski){
+export function postSki(ski, user){
   fetch(skisUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${localStorage.token}`
     },
-    body: JSON.stringify({ ski })
+    body: JSON.stringify({ ski: {...ski, user_id: user.id} })
   })
 }
 
 export function deleteSki(id){
-  fetch(skisUrl + id, { method: "DELETE" })
+  fetch(skisUrl + id, { 
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${localStorage.token}`
+    } })
 }

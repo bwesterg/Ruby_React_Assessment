@@ -30,7 +30,6 @@ class App extends Component {
         "Authorization": `Bearer ${localStorage.token}`
       }
     })
-    // .then(console.log)
     .then(response => response.json())
     .then(response => {
       this.setState({
@@ -44,7 +43,7 @@ class App extends Component {
     this.setState({
       skis: [...this.state.skis, newSki]
     })
-    postSki(newSki)
+    postSki(newSki, this.state.user)
   }
 
   updateSki = (updatedSki) => {
