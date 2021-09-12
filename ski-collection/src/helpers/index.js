@@ -6,7 +6,6 @@ export function patchSki(ski){
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${localStorage.token}`
-
       },
       body: JSON.stringify({ ski })
     })
@@ -28,5 +27,10 @@ export function deleteSki(id){
     method: "DELETE",
     headers: {
       "Authorization": `Bearer ${localStorage.token}`
+
     } })
+
+    }
+  })
+
 }
