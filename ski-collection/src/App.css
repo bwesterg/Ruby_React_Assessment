@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+
 body {
   background-color: rgb(255, 252, 223);
+  font-family: Roboto, sans-serif;
 }
 
 .App{
@@ -15,52 +19,70 @@ body {
   justify-content: space-evenly;
   background-color: white;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 10px 5px -8px grey;
+  box-shadow: -10px 10px 10px -10px rgb(230, 208, 88);
 }
 
 .ski-list {
   display: flex;
   flex-flow: row wrap;
   list-style-type: none;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 90%;
   margin: 0 auto;
   padding-inline-start: 0;
 }
 
 .ski-item { 
-  background-color: white;
-  width: 220px;
-  box-shadow: 0 20px 10px -8px grey;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -5px 5px 5px -5px rgb(230, 208, 88);
   text-align: center;
-  border-radius: 6px;
+  border-radius: 20px;
   padding: 20px;
+  /* max-height: 220px; */
+  max-width: max-content;
   height: max-content;
-  margin-top: 10px;
+  margin-top: 5px;
+  font-family: Roboto, sans-serif;
+}
+
+.item-description {
+  text-align: left;
 }
 
 .edit-button {
   background-color: rgb(252, 252, 151);
-  color: rgb(56, 133, 233)
+  color: rgb(56, 133, 233);
+  padding: 5px;
+  border-radius: 6px;
+  margin-left: 2px;
+  font-weight: bold;
 }
 
 .delete-button {
   background-color: rgb(255, 164, 164);
   color: white;
+  padding: 5px;
+  border-radius: 6px;
+  margin-right: 2px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
 }
 
 .close-button {
   background-color: rgb(255, 164, 164);
   color: white;
   font-weight: bold;
+  font-family: Roboto, sans-serif;
 }
 
 input[type="submit"]{
   padding: 10px;
   box-shadow: 0 20px 20px -10px rgb(199, 199, 199); 
   transition: .2s linear;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
 }
 
 input[type="submit"]:hover{
@@ -74,6 +96,7 @@ input[type="submit"]:hover{
   color: red;
   font-weight: bold;
   font-style: italic;
+  font-family: Roboto, sans-serif;
 }
 
 .signup-form {
@@ -88,4 +111,5 @@ input[type="submit"]:hover{
   border-radius: 6px;
   margin-bottom: 20px;
   box-shadow: 0 10px 5px -8px grey;
+  font-family: Roboto, sans-serif;
 }

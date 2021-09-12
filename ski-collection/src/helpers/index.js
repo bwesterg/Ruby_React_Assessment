@@ -18,7 +18,7 @@ export function postSki(ski, user){
       "Content-Type": "application/json",
       "Authorization": `Bearer ${localStorage.token}`
     },
-    body: JSON.stringify({ ski: {...ski, user_id: user.id} })
+    body: JSON.stringify({ ski: {...ski, user_id: user.id, ski_id: ski.id} })
   }).then(response => response.json())
 }
 

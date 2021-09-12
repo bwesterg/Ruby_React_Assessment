@@ -126,7 +126,7 @@ class App extends Component {
               ) 
           : null}
         </header>
-        <h1>Ski Collection App</h1>
+        <h1>My Ski Collection</h1>
         <Switch>
           <PrivateRoute
             exact 
