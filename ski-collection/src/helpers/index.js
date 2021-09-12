@@ -27,6 +27,10 @@ export function deleteSki(id){
     method: "DELETE",
     headers: {
       "Authorization": `Bearer ${localStorage.token}`
+
+    } })
+
     }
   })
+
 }
