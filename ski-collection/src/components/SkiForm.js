@@ -60,7 +60,7 @@ export default class SkiForm extends Component{
         const {brand, model, description, usage} = this.state
         return (
             <form className="ski-form" onSubmit={this.handleSubmit}>
-                {this.props.ski ? <h3>Edit Ski</h3> : <h3>Add a new pair of skis</h3>}
+                {this.props.ski ? <h3>Edit Ski Description</h3> : <h3>Add Skis to Collection</h3>}
                 <label>Brand</label>
                 <input type="text" name="brand" value={brand} onChange={this.handleChange}/>
                 <label>Model</label>
