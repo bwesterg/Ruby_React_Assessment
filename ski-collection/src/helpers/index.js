@@ -19,7 +19,7 @@ export function postSki(ski, user){
       "Authorization": `Bearer ${localStorage.token}`
     },
     body: JSON.stringify({ ski: {...ski, user_id: user.id} })
-  })
+  }).then(response => response.json())
 }
 
 export function deleteSki(id){
@@ -27,10 +27,6 @@ export function deleteSki(id){
     method: "DELETE",
     headers: {
       "Authorization": `Bearer ${localStorage.token}`
-
-    } })
-
     }
   })
-
 }
