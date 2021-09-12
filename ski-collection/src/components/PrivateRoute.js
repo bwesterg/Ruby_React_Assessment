@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom'
-import Home from './Home'
+// import Home from './Home'
 
 export default function PrivateRoute({path, component: Component, ...props}) {
     return localStorage.token 

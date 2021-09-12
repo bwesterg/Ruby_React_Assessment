@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import SkiContainer from "./components/SkiContainer";
-import SkiForm from "./components/SkiForm";
+// import SkiContainer from "./components/SkiContainer";
+// import SkiForm from "./components/SkiForm";
 import { patchSki, postSki, deleteSki } from './helpers';
 import SignUpForm from './components/SignUpForm';
 import {Route, Switch, Redirect, Link} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import Home from './components/Home';
-const skisUrl = "http://localhost:3000/skis/"
+// const skisUrl = "http://localhost:3000/skis/"
+const profileUrl = "http://localhost:3000/profile"
 
 class App extends Component {
   
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   authorize_user = () => {
-    fetch("http://localhost:3000/profile", {
+    fetch(profileUrl, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${localStorage.token}`
