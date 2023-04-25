@@ -1,4 +1,4 @@
-# blkdg_assessment
+# Ruby_React_Assessment
 
 Ski Collection App - startup instructions:
 
