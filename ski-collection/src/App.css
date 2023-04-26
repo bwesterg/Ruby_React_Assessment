@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
+* {
+  font-family: 'Roboto', sans-serif !important;
+  
+}
+
+h1:hover {
+  color: blue;
+}
 
 body {
   background-color: rgb(255, 252, 223);
-  font-family: Roboto, sans-serif;
 }
 
 .App{
@@ -22,6 +29,16 @@ body {
   border-radius: 20px;
   margin-bottom: 20px;
   box-shadow: -10px 10px 10px -10px rgb(230, 208, 88);
+}
+
+.ski-form input[type="text"] {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 600;
+}
+
+.ski-form label {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 600;
 }
 
 .ski-list {
@@ -44,7 +61,7 @@ body {
   max-width: max-content;
   height: max-content;
   margin-top: 5px;
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .item-description {
@@ -112,4 +129,13 @@ input[type="submit"]:hover{
   margin-bottom: 20px;
   box-shadow: 0 10px 5px -8px grey;
   font-family: Roboto, sans-serif;
+}
+
+header, footer {
+  background-color: rgb(214, 253, 253);
+  padding-top: 20px;
+}
+
+header {
+  position: sticky;
 }
