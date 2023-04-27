@@ -11,7 +11,10 @@ export default function Home(props) {
             <div class="skis-container container">
                 <SkiContainer updateSki={props.updateSki} deleteSki={props.deleteSki} skis={props.skis} />
             </div>
-
+            <div 
+                id="fun-box"
+                
+            ></div>
             <footer>
                 <div>
                     footer
