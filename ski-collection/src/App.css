@@ -139,3 +139,17 @@ header, footer {
 header {
   position: sticky;
 }
+
+.fun-box {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  .fun-box {
+    background-color: green;
+    height: 150px;
+    width: 150px;
+  }
+}
