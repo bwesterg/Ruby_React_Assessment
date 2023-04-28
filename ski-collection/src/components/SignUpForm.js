@@ -45,7 +45,9 @@ export default function SignUpForm(props) {
             <input name="username" value={username} onChange={handleChange} />
             <label>Password</label>
             <input type="password" name="password" value={password} onChange={handleChange} />
-            <input type="submit" />
+            <div class="submit-login">
+                <input type="submit" />
+            </div>
             {props.alerts ? showAlerts() : null }
             {login
                 ? <p>Don't Have a Profile? <button onClick={handleLoginForm} >Sign Up</button></p>

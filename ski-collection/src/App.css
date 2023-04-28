@@ -96,10 +96,11 @@ body {
 
 input[type="submit"]{
   padding: 10px;
-  box-shadow: 0 20px 20px -10px rgb(199, 199, 199); 
+  /* box-shadow: 0 20px 20px -10px rgb(199, 199, 199);  */
   transition: .2s linear;
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   font-weight: bold;
+  /* border-radius: 5px; */
 }
 
 input[type="submit"]:hover{
@@ -107,6 +108,8 @@ input[type="submit"]:hover{
   background-color: rgb(5, 106, 0);
   border: none;
   font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #00ff94;
 }
 
 .error-red {
@@ -152,4 +155,12 @@ header {
     height: 150px;
     width: 150px;
   }
+}
+
+.submit-login {
+  margin-top: 15px;
+}
+
+.submit-login input {
+  width: 100%;
 }
