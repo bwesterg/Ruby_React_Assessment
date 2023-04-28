@@ -97,7 +97,7 @@ body {
 input[type="submit"]{
   padding: 10px;
   /* box-shadow: 0 20px 20px -10px rgb(199, 199, 199);  */
-  transition: .2s linear;
+  transition: .1s linear;
   font-family: 'Roboto', sans-serif !important;
   font-weight: bold;
   /* border-radius: 5px; */
@@ -105,7 +105,7 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
   color: white;
-  background-color: rgb(5, 106, 0);
+  background-color: rgb(101 191 96);
   border: none;
   font-weight: bold;
   border-radius: 5px;
@@ -163,4 +163,8 @@ header {
 
 .submit-login input {
   width: 100%;
+}
+
+.no-profile-query p, .sign-in-query p {
+  font-family: 'Roboto', sans-serif;
 }

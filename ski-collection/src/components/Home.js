@@ -7,19 +7,10 @@ export default function Home(props) {
     return (
         <>
             <SkiForm submitAction={props.submitAction}/>
-            <h2>Skis in my collection</h2>
+            
             <div class="skis-container container">
                 <SkiContainer updateSki={props.updateSki} deleteSki={props.deleteSki} skis={props.skis} />
             </div>
-            <div 
-                id="fun-box"
-                
-            ></div>
-            <footer>
-                <div>
-                    footer
-                </div>
-            </footer>
         </>
     )
 }
