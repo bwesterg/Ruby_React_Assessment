@@ -50,8 +50,14 @@ export default function SignUpForm(props) {
             </div>
             {props.alerts ? showAlerts() : null }
             {login
-                ? <p>Don't Have a Profile? <button onClick={handleLoginForm} >Sign Up</button></p>
-                : <p>Already Have a Profile? <button onClick={handleLoginForm} >Log In</button></p>
+
+                ? <div class="no-profile-query">                
+                    <p>Don't Have a Profile? <button onClick={handleLoginForm} >Sign Up</button></p>
+                </div>
+                : 
+                <div class="sign-in-query">
+                    <p>Already Have a Profile? <button onClick={handleLoginForm} >Log In</button></p>
+                </div>
             }
         </form>
     )
