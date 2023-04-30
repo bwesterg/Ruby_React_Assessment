@@ -96,11 +96,9 @@ body {
 
 input[type="submit"]{
   padding: 10px;
-  /* box-shadow: 0 20px 20px -10px rgb(199, 199, 199);  */
   transition: .1s linear;
   font-family: 'Roboto', sans-serif !important;
   font-weight: bold;
-  /* border-radius: 5px; */
 }
 
 input[type="submit"]:hover{
