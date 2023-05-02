@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 250px;
+  height: auto;
   margin: auto;
   justify-content: space-evenly;
   background-color: white;
@@ -72,7 +72,7 @@ body {
   background-color: rgb(252, 252, 151);
   color: rgb(56, 133, 233);
   padding: 5px;
-  border-radius: 6px;
+  border-radius: 2px;
   margin-left: 2px;
   font-weight: bold;
 }
@@ -81,7 +81,7 @@ body {
   background-color: rgb(255, 164, 164);
   color: white;
   padding: 5px;
-  border-radius: 6px;
+  border-radius: 2px;
   margin-right: 2px;
   font-family: Roboto, sans-serif;
   font-weight: bold;
@@ -92,6 +92,8 @@ body {
   color: white;
   font-weight: bold;
   font-family: Roboto, sans-serif;
+  margin-top: 8px;
+  border-radius: 2px;
 }
 
 input[type="submit"]{
@@ -99,6 +101,7 @@ input[type="submit"]{
   transition: .1s linear;
   font-family: 'Roboto', sans-serif !important;
   font-weight: bold;
+  margin-top: 18px;
 }
 
 input[type="submit"]:hover{
@@ -121,7 +124,7 @@ input[type="submit"]:hover{
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 200px;
+  height: auto;
   margin: auto;
   justify-content: space-evenly;
   background-color: white;
