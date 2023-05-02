@@ -69,7 +69,7 @@ export default class SkiForm extends Component{
                 <input type="text" name="description" value={description} onChange={this.handleChange}/>
                 <label>Usage</label>
                 <input type="text" name="usage" value={usage} onChange={this.handleChange}/>
-                <input type="submit" className="submit-button" />
+                <input type="submit" className="submit-button"></input>
                 {this.showCloseButton()}
             </form>
         )
